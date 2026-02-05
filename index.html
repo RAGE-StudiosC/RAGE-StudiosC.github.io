@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RAGE Studios - Desarrollo de Aplicaciones</title>
+
+  <!-- Fonts + Icons + AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --panel:#121212;
+      --card:#1a1a1a;
+      --text:#f5f5f5;
+      --muted:rgba(255,255,255,0.75);
+      --accent:#1e90ff;
+      --accent2:#00bfff;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:'Roboto',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;width:100%;
+      background:rgba(10,10,10,0.9);
+      backdrop-filter:blur(8px);
+      z-index:1200;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    }
+    .nav-wrap{
+      max-width:1200px;margin:0 auto;padding:0.9rem 1.5rem;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+
+    /* NUEVO ESTILO DEL LOGO RAGE */
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 2px;
+      position: relative;
+      text-shadow: 0 0 10px rgba(30,144,255,0.5);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      animation: moveLine 3s linear infinite;
+    }
+
+    @keyframes moveLine {
+      0% { opacity: 0.5; width: 0; }
+      50% { opacity: 1; width: 100%; }
+      100% { opacity: 0.5; width: 0; }
+    }
+
+    .logo:hover {
+      color: var(--accent2);
+      text-shadow: 0 0 20px rgba(0,191,255,0.8);
+    }
+
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{color:var(--text);text-decoration:none;font-weight:500;position:relative;padding-bottom:6px}
+    .nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent2);transition:width .25s}
+    .nav-links a:hover::after{width:100%}
+
+    .mobile-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.5rem}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 1rem 6rem;
+      background:radial-gradient(circle at center, rgba(30,144,255,0.12), transparent 60%);
+    }
+    .hero h1{
+      font-family:'Orbitron',sans-serif;font-size:2.6rem;line-height:1.25;max-width:920px;margin:0 auto;
+      text-shadow:0 0 18px rgba(30,144,255,0.18);
+    }
+
+    .section{
+      max-width:1200px;margin:0 auto;padding:4rem 1.25rem;
+    }
+
+    .section-title{
+      text-align:center;font-family:'Orbitron',sans-serif;font-size:2.4rem;margin:0 auto 2.25rem;display:block;
+      position:relative;color:var(--text);
+    }
+    .section-title::after{
+      content:'';display:block;margin:12px auto 0;height:3px;width:160px;background:linear-gradient(90deg,transparent,var(--accent),transparent);
+    }
+
+    .projects-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;
+      align-items:start;
+    }
+    .project-card{
+      background:var(--card);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);
+      display:flex;flex-direction:column;height:100%;
+      transition:transform .28s ease,box-shadow .28s ease;
+    }
+    .project-card:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+    .project-img img{width:100%;height:200px;object-fit:cover;display:block}
+    .project-content{padding:1.25rem;flex:1;display:flex;flex-direction:column}
+    .project-title{font-family:'Orbitron',sans-serif;color:var(--accent);font-size:1.25rem;margin-bottom:0.6rem}
+    .project-desc{color:var(--muted);font-size:0.98rem;line-height:1.5}
+    .project-features{margin-top:1rem}
+    .feature{display:flex;align-items:center;gap:.6rem;color:var(--muted);margin-bottom:.6rem;font-size:.95rem}
+    .feature i{color:var(--accent2);min-width:20px;text-align:center}
+
+    .contact-wrap{display:flex;flex-direction:column;align-items:center;gap:1.25rem;padding:2rem 0}
+    .social-links{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    .social-link{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);color:var(--text);font-size:1.5rem;border:1px solid rgba(255,255,255,0.05);transition:transform .25s,color .25s,box-shadow .25s}
+    .social-link:hover{transform:translateY(-8px);color:var(--accent2);box-shadow:0 12px 30px rgba(0,191,255,0.12)}
+
+    footer{padding:2rem 1rem;text-align:center;border-top:1px solid rgba(255,255,255,0.03);color:rgba(255,255,255,0.5)}
+
+    @media (max-width:900px){
+      .hero h1{font-size:2rem;padding:0 1rem}
+    }
+    @media (max-width:768px){
+      .nav-links{position:fixed;top:70px;right:-100%;width:70%;height:calc(100vh - 70px);background:var(--panel);flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;padding:1rem;transition:right .28s;}
+      .nav-links.active{right:0}
+      .mobile-toggle{display:block}
+      .nav-wrap{padding-left:1rem;padding-right:1rem}
+      .social-link{width:64px;height:64px}
+    }
+
+    :target::before{content:"";display:block;height:86px;margin-top:-86px;visibility:hidden;}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-wrap">
+      <a class="logo" href="#inicio">RAGE</a>
+      <button class="mobile-toggle" aria-label="menu"><i class="fas fa-bars"></i></button>
+      <div class="nav-links" role="navigation" aria-label="main-navigation">
+        <a href="#inicio">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <main>
+    <section id="inicio" class="hero" aria-label="inicio">
+      <h1 data-aos="fade-up">
+        Somos una empresa individual dedicada al desarrollo de aplicaciones básicas con grandes ideas.
+      </h1>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="proyectos" class="section" aria-label="proyectos">
+      <h2 class="section-title" data-aos="fade-up">Nuestros Proyectos</h2>
+      <div class="projects-grid" data-aos="fade-up" data-aos-delay="120">
+        <article class="project-card">
+          <div class="project-img"><img src="https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg"></div>
+          <div class="project-content">
+            <h3 class="project-title">Spottrack</h3>
+            <p class="project-desc">Una app de música que reproduce canciones desde YouTube sin anuncios y con reproducción en segundo plano.</p>
+            <div class="project-features">
+              <div class="feature"><i class="fas fa-check-circle"></i> Reproducción sin anuncios</div>
+              <div class="feature"><i class="fas fa-check-circle"></i> Modo en segundo plano</div>
+              <div class="feature"><i class="fas fa-check-circle"></i> Biblioteca de canciones personalizada</div>
+              <div class="feature"><i class="fas fa-check-circle"></i> Interfaz intuitiva y moderna</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img"><img src="https://cdn.pixabay.com/photo/2015/01/16/15/23/calculator-601461_1280.jpg"></div>
+          <div class="project-content">
+            <h3 class="project-title">Calculadora</h3>
+            <p class="project-desc">Una aplicación básica y ligera ideal para tareas diarias.</p>
+            <div class="project-features">
+              <div class="feature"><i class="fas fa-check-circle"></i> Funciones básicas y científicas</div>
+              <div class="feature"><i class="fas fa-check-circle"></i> Historial de operaciones</div>
+              <div class="feature"><i class="fas fa-check-circle"></i> Diseño minimalista</div>
+              <div class="feature"><i class="fas fa-check-circle"></i> Consumo mínimo de recursos</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contacto" class="section" aria-label="contacto">
+      <h2 class="section-title" data-aos="fade-up">Contacto</h2>
+      <div class="contact-wrap" data-aos="fade-up">
+        <p style="color:var(--muted);text-align:center;max-width:820px;">
+          Síguenos o contacta directamente:
+        </p>
+        <div class="social-links">
+          <a class="social-link" href="#"><i class="fab fa-github"></i></a>
+          <a class="social-link" href="#"><i class="fab fa-discord"></i></a>
+          <a class="social-link" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="social-link" href="mailto:tuemail@ejemplo.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 RAGE Studios. Todos los derechos reservados.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:700,once:true});
+    const toggle=document.querySelector('.mobile-toggle');
+    const navLinks=document.querySelector('.nav-links');
+    toggle?.addEventListener('click',()=>{
+      navLinks.classList.toggle('active');
+      toggle.innerHTML=navLinks.classList.contains('active')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
+    });
+  </script>
+</body>
+</html>
