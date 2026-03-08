@@ -1,100 +1,99 @@
-RAGE Studios
+ 🚀 RAGE Studios
+
+"Website" (https://img.shields.io/badge/Website-Online-brightgreen)
+"Version" (https://img.shields.io/badge/Website%20Version-1.0-blue)
+"Status" (https://img.shields.io/badge/Status-Active-success)
+"Projects" (https://img.shields.io/badge/Projects-2-orange)
 
 Bienvenido/a al repositorio oficial de la página web de RAGE Studios.
-Aquí se presentan nuestros proyectos, aplicaciones, lanzamientos y desarrollos experimentales.
 
-🌐 Sitio web oficial:
+Aquí encontrarás información sobre nuestros proyectos, aplicaciones, lanzamientos y desarrollos.
+
+🌐 Sitio web oficial
 https://rage-studiosC.github.io
 
 ---
 
-Información del sitio
+🏢 Sobre RAGE Studios
 
-Nombre: RAGE Studios Official Website
-Versión de la web: 1.0
-Estado: Activo
-Desarrollador: RAGE Studios
-Tipo: Sitio de presentación corporativa
+RAGE Studios es un estudio de desarrollo enfocado en crear software:
 
-Este sitio funciona como la página central de nuestros proyectos y desarrollos.
+⚡ Optimizado
+💻 Compatible con distintos sistemas
+🚀 Ligero y rápido
+🧠 Diseñado para funcionar incluso en hardware modesto
+
+Nuestro objetivo es crear aplicaciones simples, eficientes y accesibles.
 
 ---
 
-Proyectos
+📦 Proyectos
 
-Spottrack
+🎵 Spottrack
 
-Aplicación de música optimizada para Windows.
+"Spottrack" (https://img.shields.io/badge/App-Spottrack-blue)
+"Platform" (https://img.shields.io/badge/Platform-Windows-0078D6)
+"Ads" (https://img.shields.io/badge/Ads-No-red)
 
-Características principales:
+Spottrack es una aplicación de música optimizada para Windows.
 
-- Reproductor de música ligero
-- Sin anuncios
-- Optimizado para rendimiento
-- Compatible con Windows 10 y Windows 11
-- Instalador para sistemas de 32 y 64 bits
+Características
 
-Sitio oficial:
+✔ Sin anuncios
+✔ Interfaz moderna y rápida
+✔ Optimizado para rendimiento
+✔ Compatible con Windows 10 y Windows 11
+✔ Instaladores para sistemas 32 y 64 bits
+
+🌐 Web oficial
 https://spottrack-com.github.io
 
-Repositorio del proyecto:
-https://github.com/RAGE-StudiosC/Spottrack-PC
-
----
-
-Calculadora Básica Optimizada
-
-Aplicación ligera diseñada para realizar cálculos matemáticos básicos con un consumo mínimo de recursos.
-
-Funciones:
-
-- Suma
-- Resta
-- Multiplicación
-- División
-- Interfaz simple y rápida
-
-Proyecto enfocado en rendimiento y simplicidad.
-
----
-
-Releases
-
-Los lanzamientos oficiales de nuestros proyectos se publican en GitHub Releases dentro de cada repositorio.
-
-Ejemplo:
-
-Spottrack PC
+📦 Releases
 https://github.com/RAGE-StudiosC/Spottrack-PC/releases
 
 ---
 
-Filosofía de desarrollo
+🧮 Calculadora Básica Optimizada
 
-En RAGE Studios nos enfocamos en crear software:
+"App" (https://img.shields.io/badge/App-Calculator-lightgrey)
+"Type" (https://img.shields.io/badge/Type-Utility-yellow)
 
-- Ligero
-- Optimizado
-- Funcional
-- Accesible para diferentes tipos de hardware
+Aplicación ligera diseñada para realizar cálculos básicos de forma rápida.
 
-Nuestro objetivo es desarrollar aplicaciones rápidas que funcionen incluso en equipos modestos.
+Funciones
+
+➕ Suma
+➖ Resta
+✖ Multiplicación
+➗ División
+
+Diseñada para ser rápida, ligera y funcional.
 
 ---
 
-Comunidad
+📢 Comunidad
 
-Puedes seguir el desarrollo de nuestros proyectos y actualizaciones en: 
+Síguenos y mantente informado sobre nuevas versiones y proyectos.
 
-YouTube
+📺 YouTube
 https://www.youtube.com/@Rage-community
 
 ---
 
-Licencia
+📊 Estado del sitio
 
-Los proyectos tienen licencias diferentes dependiendo del repositorio.
-Consulta cada proyecto para más detalles.
+Elemento| Estado
+Website| 🟢 Online
+Versión| 1.0
+Proyectos| 2
+Actualizaciones| Activas
+
+---
+
+📜 Licencia
+
+Cada proyecto tiene una licencia diferente.
+Consulta el repositorio correspondiente para más detalles.
 
 ---
 
